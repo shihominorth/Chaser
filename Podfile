@@ -7,7 +7,7 @@ target 'Chaser' do
 
   # Pods for Chaser
 
-pod "HyperioniOS/Core"
+pod "HyperioniOS/Core", :configurations => ['Debug']
 
 #"Configurations => Debug" ensures it is only included in debug builds. Add any configurations you would like Hyperion to be included in.
 pod 'HyperioniOS/AttributesInspector', :configurations => ['Debug'] # Optional plugin
