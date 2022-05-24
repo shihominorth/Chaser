@@ -1,0 +1,39 @@
+
+name: Chaser
+fileGroups:
+  - configs
+configFiles:
+  Debug: configs/Debug.xcconfig
+  Release: configs/Release.xcconfig
+targets:
+  Chaser:
+    type: application
+    platform: iOS
+    sources: Chaser
+    configFiles:
+      Debug: configs/Chaser-Debug.xcconfig
+      Release: configs/Chaser-Release.xcconfig
+    settings:
+      CURRENT_PROJECT_VERSION: 1
+    scheme:
+      testTargets:
+        - ChaserTests
+        - ChaserUITests
+  ChaserTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ChaserTests
+    configFiles:
+      Debug: configs/ChaserTests-Debug.xcconfig
+      Release: configs/ChaserTests-Release.xcconfig
+    dependencies:
+      - target: Chaser
+  ChaserUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: ChaserUITests
+    configFiles:
+      Debug: configs/ChaserUITests-Debug.xcconfig
+      Release: configs/ChaserUITests-Release.xcconfig
+    dependencies:
+      - target: Chaser 
