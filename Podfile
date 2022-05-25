@@ -7,7 +7,12 @@ target 'Chaser' do
 
   # Pods for Chaser
 
-pod "HyperioniOS/Core", :configurations => ['Debug']
+  pod "HyperioniOS/Core", :configurations => ['Debug']
+
+  # Pods for amplify-learn
+  pod 'AWSMobileClient'
+  pod 'AWSAuthUI'
+  pod 'AWSUserPoolsSignIn'
 
 #"Configurations => Debug" ensures it is only included in debug builds. Add any configurations you would like Hyperion to be included in.
 pod 'HyperioniOS/AttributesInspector', :configurations => ['Debug'] # Optional plugin
