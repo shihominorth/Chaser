@@ -1,6 +1,25 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
 
+post_install do |installer|
+ # add these lines:
+ installer.pods_project.build_configurations.each do |config|
+  config.build_settings["EXCLUDED_ARCHS[sdk=*]"] = "armv7"
+  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = $iOSVersion
+ end
+  
+ installer.pods_project.targets.each do |target|
+   
+  # add these lines:
+  target.build_configurations.each do |config|
+   if Gem::Version.new($iOSVersion) > Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'])
+    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = $iOSVersion
+   end
+  end
+   
+ end
+end
+
 target 'Chaser' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
