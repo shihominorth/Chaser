@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol LoginWireframe: AnyObject {
+protocol SignInWireframe: AnyObject {
     func toHome()
 }
 
-class LoginRouter {
+class SignInRouter {
     
     // 画面遷移のためにViewControllerが必要。initで受け取る
     private unowned var viewController: UIViewController
@@ -24,14 +24,14 @@ class LoginRouter {
     // DI
     static func assembleModules() -> UIViewController {
        
-        guard let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else {
+        guard let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC") as? SignInViewController else {
             fatalError()
         }
-        let router = LoginRouter(viewController: view)
-        let interactor = LoginInteractor()
+        let router = SignInRouter(viewController: view)
+        let interactor = SignInInteractor()
         // PresenterはView, Interactor, Routerそれぞれ必要なので
         // 生成し、initの引数で渡す
-        let presenter = LoginPresenter(
+        let presenter = SignInPresenter(
             view: view,
             router: router,
             interactor: interactor
@@ -46,7 +46,7 @@ class LoginRouter {
     
 }
 
-extension LoginRouter: LoginWireframe {
+extension SignInRouter: SignInWireframe {
     func toHome() {
         
     }

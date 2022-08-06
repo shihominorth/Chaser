@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol LoginPresentation: AnyObject {
+protocol SignInPresentation: AnyObject {
     func signInBtnDidPush(userName: String, password: String)
 }
 
-class LoginPresenter: LoginPresentation {
+class SignInPresenter: SignInPresentation {
     
     // View, Interactor, Routerへのアクセスはprotocolを介して行う
     // Viewは循環参照にならないよう`weak`プロパティ
-    private weak var view: LoginView?
-    private let router: LoginWireframe
-    private let interactor: LoginUseCase
+    private weak var view: SignInView?
+    private let router: SignInWireframe
+    private let interactor: SignInUseCase
     
-    init(view: LoginView, router: LoginRouter, interactor: LoginUseCase) {
+    init(view: SignInView, router: SignInRouter, interactor: SignInUseCase) {
         
         self.view = view
         self.router = router

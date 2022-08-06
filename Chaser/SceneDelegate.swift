@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         
                         window.makeKeyAndVisible()
                         let navigationController = UINavigationController()
-                        let loginViewController = LoginRouter.assembleModules()
+                        let loginViewController = SignInRouter.assembleModules()
                         navigationController.viewControllers = [loginViewController]
                         window.rootViewController = navigationController
                         
@@ -57,7 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         // ここで、init時に受け取ったViewControllerを使う
                         window.makeKeyAndVisible()
                         let navigationController = UINavigationController()
-                        let loginViewController = LoginRouter.assembleModules()
+                        let loginViewController = SignInRouter.assembleModules()
                         navigationController.viewControllers = [loginViewController]
                         window.rootViewController = navigationController
                         
@@ -79,7 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     // ここで、init時に受け取ったViewControllerを使う
                     window.makeKeyAndVisible()
                     let navigationController = UINavigationController()
-                    let loginViewController = LoginRouter.assembleModules()
+                    let loginViewController = SignInRouter.assembleModules()
                     navigationController.viewControllers = [loginViewController]
                     window.rootViewController = navigationController
                     
@@ -91,7 +91,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     // ここで、init時に受け取ったViewControllerを使う
                     window.makeKeyAndVisible()
                     let navigationController = UINavigationController()
-                    let loginViewController = LoginRouter.assembleModules()
+                    let loginViewController = SignInRouter.assembleModules()
                     navigationController.viewControllers = [loginViewController]
                     window.rootViewController = navigationController
                     

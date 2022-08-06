@@ -8,13 +8,13 @@
 import Foundation
 import AWSMobileClient
 
-protocol LoginUseCase: AnyObject {
+protocol SignInUseCase: AnyObject {
     func signIn(userName: String, password: String)
 }
 
-final class LoginInteractor: LoginUseCase {
+final class SignInInteractor: SignInUseCase {
     
-    weak var presenter: LoginPresentation?
+    weak var presenter: SignInPresentation?
     
     func signIn(userName: String, password: String) {
         

@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol LoginView: AnyObject {
+protocol SignInView: AnyObject {
     func signInBtnPushed()
 }
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
     
     // Presenterへのアクセスはprotocolを介して行う
-    var presenter: LoginPresentation!
+    var presenter: SignInPresentation!
     
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
 
 }
 
-extension LoginViewController: LoginView {
+extension SignInViewController: SignInView {
    
     @objc func signInBtnPushed() {
         
